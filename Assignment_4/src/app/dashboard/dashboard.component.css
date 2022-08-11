@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+    background: #FDEDEC;
+    padding-bottom: 1rem;
+}
+
+header {
+    background: #FADBD8;
+}
+
+header h1 {
+    text-align: center;
+    font-family: cursive;
+    color: #000;
+}
+
+.container {
+    max-width: 1280px;
+    margin: auto;
+    padding: 1rem 2rem;
+    overflow: hidden;
+}
+
+/* Dashboard */
+.container-heading h2 {
+    width: 100%;
+    margin-left: 3rem;
+    padding-top: 2rem;
+}
+
+.container-heading {
+    width: 94%;
+}
+
+.container-cards {
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+}
+
+.icon {
+    font-size: xx-large;
+    margin-top: 3vw;
+    margin-bottom: 1vw;
+    margin-left: 3vw;
+    margin-right: 3vw;
+
+}
+
+.subheading {
+    font-size: large;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    margin-left: 3vw;
+    margin-right: 3vw;
+}
+
+.amount {
+    font-size: x-large;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    margin-left: 3vw;
+    margin-right: 3vw;
+}
+
+.change {
+    font-size: large;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    margin-left: 3vw;
+    margin-right: 3vw;
+}
+
+.box1 {
+    position: relative;
+    padding: 1rem;
+    background: #884EA0;
+    color: #ffff;
+    margin-top: 25px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.box2 {
+    position: relative;
+    padding: 1rem;
+    background: #3498DB;
+    color: #ffff;
+    margin-top: 25px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.box3 {
+    position: relative;
+    padding: 1rem;
+    background: #F39C12;
+    color: #ffff;
+    margin-top: 25px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.table-rapper h2 {
+    padding: 1rem 3rem 0 3rem;
+}
+
+.table-rapper .container {
+    width: 83%;
+    background: #fff;
+    padding: 1rem 0;
+}
+
+.table-rapper .container-table {
+    padding: 1rem 3rem;
+    overflow-x: auto;
+}
+
+.table-rapper .container-table table {
+    width: 100%;
+    text-align: left;
+}
+
+.table-rapper .container-table table tr th,
+.table-rapper .container-table table tr td {
+    padding: 1rem;
+    border-bottom: #ddd dotted 2px;
+}
+
+.approved {
+    font-size: medium;
+    text-transform: uppercase;
+    padding: 0.5rem;
+    border: 2px solid black;
+    background: #3498DB;
+    color: #ffff;
+    text-align: center;
+}
+
+.pending {
+    font-size: medium;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    /* t r b l */
+    border: 2px solid black;
+    background: #884EA0;
+    color: #ffff;
+    text-align: center;
+}
+
+.reject {
+    font-size: medium;
+    text-transform: uppercase;
+    padding: 0.5rem 1.3rem 0.5rem 1.3rem;
+    border: 2px solid black;
+    background: #F39C12;
+    color: #ffff;
+    text-align: center;
+}
+
+@media only screen and (max-width:500px) {
+
+    .container-cards {
+        grid-template-columns: 1fr;
+    }
+
+}
