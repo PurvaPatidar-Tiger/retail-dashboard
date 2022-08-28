@@ -1,0 +1,30 @@
+{
+	"login": {
+            "title": "Price tool",
+            "subtitle": "Créez et comparez des scénarios pour faire avancer les choses",
+            "emailAdress.label": "Nom d'utilisateur",
+            "emailAdress.error": "Email address is required",
+		    "emailAdress.validationError": "Please enter a valid email address",
+            "password.label": "Mot de passe",
+            "password.error": "Password is required",
+            "signinbutton.name": "Signin",
+            "orword.label": "Ou alors",
+            "ssobutton.label": "Se connecter avec SSO",
+            "right.title": "Simulateur",
+            "forgotpassword.label": "Mot de passe oublié?",
+            "email.label":"e-mail",
+            "rememberme.label": "Remember me",
+		    "signinbutton.label": "Sign In",
+		    "signupbutton.label": "Sign Up",
+            "noaccount.label": "Don't have an account?"
+	},
+	"forgotPassword":{
+        "title": "Fr Forgot password?",
+        "subtitle": "Fr Fill the form to reset your password",
+		"emailAdress.label": "Fr Email Address",
+		"emailAdress.error": "Fr Email address is required",
+		"emailAdress.validationError": "Fr Please enter a valid email address",
+		"resendlink.label":"Fr Resend Link",
+        "signinbutton.label": "Fr Sign In"
+	}
+}

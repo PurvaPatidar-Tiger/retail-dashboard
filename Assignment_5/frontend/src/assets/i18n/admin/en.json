@@ -1,0 +1,17 @@
+{
+	"login": {
+		"title": "Price Tool",
+        "subtitle": "Create and compare scenarios to get things done",
+		"username.label": "Username",
+		"password.label": "Password",
+		"loginbutton.name": "Login",
+        "or.word": "Or",
+        "ssobutton.name": "Sign In with SSO",
+        "right.title": "Simulator",
+		"forgotpassword.link": "Forgot Password ?"
+	},
+	"forgotPassword":{
+		"email.label":"Email",
+		"resendlink.label":"Resend Link"
+	}
+}

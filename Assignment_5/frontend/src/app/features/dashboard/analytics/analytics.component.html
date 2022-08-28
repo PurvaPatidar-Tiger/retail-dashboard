@@ -1,0 +1,92 @@
+<div class="flex flex-col flex-auto w-full">
+  <div class="flex flex-wrap w-full max-w-screen-xl mx-auto p-6 md:p-8">
+    <!-- Title and action buttons -->
+    <div class="flex items-center justify-between w-full">
+      <div>
+        <div class="text-3xl text-gray-500 font-semibold tracking-tight leading-8">
+          Analytics dashboard
+        </div>
+        <div class="font-medium tracking-tight text-gray-500">
+          Monitor metrics, check reports and review performance
+        </div>
+      </div>
+      <div class="flex items-center ml-6">
+        <button class="hidden sm:inline-flex" mat-flat-button [color]="'accent'">
+          <mat-icon class="icon-size-5">settings</mat-icon>
+          <span class="ml-2">Settings</span>
+        </button>
+        <button class="hidden sm:inline-flex ml-3" mat-flat-button [color]="'primary'">
+          <mat-icon class="icon-size-5">save</mat-icon>
+          <span class="ml-2">Export</span>
+        </button>
+
+        <!-- Actions menu (visible on xs) -->
+        <div class="sm:hidden">
+          <button [matMenuTriggerFor]="actionsMenu" mat-icon-button>
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #actionsMenu="matMenu">
+            <button mat-menu-item>Export</button>
+            <button mat-menu-item>Settings</button>
+          </mat-menu>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chart Number 1 -->
+    <div class="w-full mt-8">
+      <!-- Name of Chart:- Mean salary vs level of experience -->
+      <div class="sm:col-span-2 lg:col-span-3 dark flex flex-col flex-auto  shadow rounded-2xl overflow-hidden">
+        <div class="flex items-center justify-between mt-10 ml-10 mr-6 sm:mr-10">
+          <div class="flex flex-col">
+            <div class="mr-4 text-2xl md:text-3xl font-semibold tracking-tight leading-7">
+              Top 10 Countries in Total Participations
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col flex-auto h-70">
+          <mat-spinner *ngIf="!barChart1Data" class="mx-auto my-50"></mat-spinner>
+          <app-charts [chartType]="'bar-chart'" [chartData]="barChart1Data" *ngIf="barChart1Data"></app-charts>
+        </div>
+      </div>
+      <br><br>
+
+    </div>
+    <!-- Chart Number 2 -->
+    <div class="w-full mt-8">
+      <div class="sm:col-span-2 lg:col-span-3 dark flex flex-col flex-auto  shadow rounded-2xl overflow-hidden">
+        <div class="flex items-center justify-between mt-10 ml-10 mr-6 sm:mr-10">
+          <div class="flex flex-col">
+            <div class="mr-4 text-2xl md:text-3xl font-semibold tracking-tight leading-7">
+              Number of Participation and Total Medals
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col flex-auto h-70">
+          <mat-spinner *ngIf="!scatterChartData" class="mx-auto my-50"></mat-spinner>
+          <app-charts [chartType]="'scatter-chart'" [chartData]="scatterChartData" *ngIf="scatterChartData">
+          </app-charts>
+        </div>
+      </div>
+      <br><br>
+
+    </div>
+    <!-- Chart Number 3 -->
+    <div class="w-full mt-8">
+      <div class="sm:col-span-2 lg:col-span-3 dark flex flex-col flex-auto  shadow rounded-2xl overflow-hidden">
+        <div class="flex items-center justify-between mt-10 ml-10 mr-6 sm:mr-10">
+          <div class="flex flex-col">
+            <div class="mr-4 text-2xl md:text-3xl font-semibold tracking-tight leading-7">
+              Top 20 Winter Medals
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col flex-auto h-70">
+          <mat-spinner *ngIf="!barChart2Data" class="mx-auto my-50"></mat-spinner>
+          <app-charts [chartType]="'stacked-bar-chart'" [chartData]="barChart2Data" *ngIf="barChart2Data"></app-charts>
+        </div>
+      </div>
+      <br><br>
+    </div>
+  </div>
+</div>

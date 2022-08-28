@@ -1,0 +1,14 @@
+{
+	"login": {
+		"title": "Price Tool",
+        "subtitle": "Создавайте и сравнивайте сценарии, чтобы добиться цели",
+		"username.label": "Имя пользователя",
+		"password.label": "Пароль",
+		"loginbutton.name": "логин",
+        "or.word": "Или",
+        "ssobutton.name": "Войти с помощью системы единого входа",
+        "right.title": "Симулятор",
+		"forgotpassword.link": "Забыли пароль?",
+		"email.label":"Эл. адрес"
+	}
+}
