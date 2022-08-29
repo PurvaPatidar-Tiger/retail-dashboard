@@ -53,7 +53,7 @@ with open("olympics_medals.csv", "r", encoding="utf-8") as csvfile:
                 "winter_silver": row[9],
                 "winter_bronze": row[10],
                 "winter_total": row[11],
-                "total_participation": row[12],
+                "total_participations": row[12],
                 "total_gold": row[13],
                 "total_silver": row[14],
                 "total_bronze": row[15],
