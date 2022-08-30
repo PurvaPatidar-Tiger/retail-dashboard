@@ -1,0 +1,144 @@
+<div class="navbar-container" [class.example-is-mobile]="mobileQuery.matches">
+  <!-- Top navbar -->
+  <mat-toolbar class="navbar bg-primary" color="primary">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <a class="navbar-brand" [routerLink]="['/']" matTooltip="Home">
+      <h1>Tiger-App-Template</h1>
+    </a>
+
+    <span class="navbar-spacer"></span>
+
+    <button mat-icon-button [matMenuTriggerFor]="notificationMenu">
+      <mat-icon matBadge="2" matBadgeColor="accent">notifications</mat-icon>
+    </button>
+    <!-- Notifications -->
+    <mat-menu
+      #notificationMenu="matMenu"
+      xPosition="before"
+      yPosition="above"
+      [overlapTrigger]="false">
+      <a mat-menu-item>
+        <span>You have new tasks</span>
+      </a>
+      <a mat-menu-item>
+        <span>You have a new message</span>
+      </a>
+    </mat-menu>
+
+    <!-- User menu options -->
+
+    <mat-menu
+      #userMenu="matMenu"
+      xPosition="before"
+      yPosition="above"
+      [overlapTrigger]="false">
+      <a mat-menu-item [routerLink]="['/account/profile']">
+        <mat-icon>person</mat-icon>
+        <span>Account</span>
+      </a>
+
+      <a mat-menu-item [routerLink]="['/auth/signout']" (click)="OnLogOut()">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Log out</span>
+      </a>
+    </mat-menu>
+
+    <button mat-button [matMenuTriggerFor]="userMenu">
+      <mat-icon>person</mat-icon>
+      <span fxShow fxHide.xs>
+        {{ userName }}
+      </span>
+    </button>
+  </mat-toolbar>
+
+  <!-- Side nav container -->
+  <mat-sidenav-container class="navbar-sidenav-container bg-accent-50">
+    <!-- Side nav -->
+    <mat-sidenav
+      #snav
+      [opened]="!mobileQuery.matches"
+      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56"
+      class="sidenav bg-accent-200">
+      <mat-nav-list>
+        <h3 mat-subheader class="text-black">Home</h3>
+        <ng-container *ngFor="let menuItem of menuItems; index as i">
+          <!-- <a mat-list-item routerLink="{{menuItem.routerLink}}" routerLinkActive="active">
+                <mat-icon mat-list-icon>
+                  {{menuItem.matIcon}}
+                </mat-icon>
+                <p mat-line> {{menuItem.displayName}} </p>
+              </a> -->
+          <ng-container
+            [ngTemplateOutlet]="menuItem.children ? childMenu : parentMenu"
+            [ngTemplateOutletContext]="{ menu: menuItem }">
+          </ng-container>
+        </ng-container>
+
+        <ng-template #parentMenu let-menu="menu">
+          <mat-list-item
+            [routerLink]="menu.routerLink"
+            routerLinkActive="is-active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="text-black">
+            <mat-icon>{{ menu.matIcon }}</mat-icon>
+            {{ menu.displayName }}
+          </mat-list-item>
+        </ng-template>
+
+        <ng-template #childMenu let-menu="menu">
+          <mat-expansion-panel
+            [class.mat-elevation-z0]="true"
+            class="bg-accent text-black">
+            <mat-expansion-panel-header>
+              <mat-icon mat-list-icon>{{ menu.matIcon }}</mat-icon>
+              {{ menu.displayName }}
+            </mat-expansion-panel-header>
+            <mat-nav-list>
+              <mat-list-item
+                [routerLink]="submenu.routerLink"
+                *ngFor="let submenu of menu.children"
+                routerLinkActive="is-active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="bg-accent text-black">
+                <mat-icon>{{ submenu.matIcon }}</mat-icon>
+                {{ submenu.displayName }}
+              </mat-list-item>
+            </mat-nav-list>
+          </mat-expansion-panel>
+        </ng-template>
+        <mat-divider></mat-divider>
+
+        <h3 mat-subheader class="bg-accent text-black">Resources</h3>
+
+        <mat-list-item
+          [routerLink]="['/auth/signout']"
+          routerLinkActive="is-active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="bg-accent text-black"
+          (click)="OnLogOut()">
+          <mat-icon>exit_to_app</mat-icon>
+          Log Out
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <!-- Main content -->
+    <mat-sidenav-content class="sidenav-content bg-slate-50">
+      <div class="progress-bar-container">
+        <mat-progress-bar
+          color="primary"
+          mode="indeterminate"
+          *ngIf="spinnerService.visibility | async">
+        </mat-progress-bar>
+        <!-- <mat-spinner class="spinner" [diameter]="50" *ngIf="showSpinner"></mat-spinner> -->
+      </div>
+
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

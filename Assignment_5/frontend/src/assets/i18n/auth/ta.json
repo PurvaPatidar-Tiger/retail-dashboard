@@ -1,0 +1,14 @@
+{
+	"login": {
+		"title": "Price Tool",
+		"username": "பயனர் பெயர்",
+		"password": "கடவுச்சொல்",
+		"loginbutton.name": "உள்நுழைவு",
+		"forgotpassword.link": "கடவுச்சொல் மறந்து விட்டீர்களா?",
+        "subtitle": "விஷயங்களைச் செய்ய, காட்சிகளை உருவாக்கி ஒப்பிடவும்",
+		"or.word": "அல்லது",
+        "ssobutton.name": "SSO உடன் உள்நுழையவும்",
+        "right.title": "சிமுலேட்டர்",
+		"email.label":"மின்னஞ்சல்"
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"login": {
+            "title": "Price tool",
+            "subtitle": "Créez et comparez des scénarios pour faire avancer les choses",
+            "username.label": "Nom d'utilisateur",
+            "password.label": "Mot de passe",
+            "loginbutton.name": "Signin",
+            "or.word": "Ou alors",
+            "ssobutton.name": "Se connecter avec SSO",
+            "right.title": "Simulateur",
+            "forgotpassword.link": "Mot de passe oublié?",
+            "email.label":"e-mail"
+        }    
+}

@@ -1,0 +1,136 @@
+@import "~@angular/material/theming";
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+
+$dark-primary-text: rgba(black, 0.87);
+$dark-secondary-text: rgba(black, 0.54);
+$dark-disabled-text: rgba(black, 0.38);
+$dark-dividers: rgba(black, 0.12);
+$dark-focused: rgba(black, 0.12);
+$light-primary-text: white;
+$light-secondary-text: rgba(white, 0.7);
+$light-disabled-text: rgba(white, 0.5);
+$light-dividers: rgba(white, 0.12);
+$light-focused: rgba(white, 0.12);
+
+$primary : (
+    50: #fef2e4,
+    100: #fddebb,
+    200: #fbc88e,
+    300: #f9b161,
+    400: #f8a13f,
+    500: #f7901d,
+    600: #f6881a,
+    700: #f57d15,
+    800: #f37311,
+    900: #f1610a,
+    A100: #ffffff,
+    A200: #ffefe7,
+    A400: #ffcdb4,
+    A700: #ffbc9b,
+    contrast: (
+        50: $dark-primary-text,
+        100: $dark-primary-text,
+        200: $dark-primary-text,
+        300: $light-primary-text,
+        400: $light-primary-text,
+        500: $light-primary-text,
+        600: $light-primary-text,
+        700: $light-primary-text,
+        800: $light-primary-text,
+        900: $light-primary-text,
+        A100: $dark-primary-text,
+        A200: $light-primary-text,
+        A400: $light-primary-text,
+        A500: $light-primary-text,
+        A700: $light-primary-text,
+    )
+);
+$secondary: (
+    50: #ebebeb,
+    100: #cecece,
+    200: #adadad,
+    300: #8c8c8c,
+    400: #747474,
+    500: #5b5b5b,
+    600: #535353,
+    700: #494949,
+    800: #404040,
+    900: #2f2f2f,
+    A100: #f38f8f,
+    A200: #ed6161,
+    A400: #ff1d1d,
+    A700: #ff0303,
+    contrast: (
+        50: $dark-primary-text,
+        100: $dark-primary-text,
+        200: $dark-primary-text,
+        300: $light-primary-text,
+        400: $light-primary-text,
+        500: $light-primary-text,
+        600: $light-primary-text,
+        700: $light-primary-text,
+        800: $light-primary-text,
+        900: $light-primary-text,
+        A100: $dark-primary-text,
+        A200: $light-primary-text,
+        A400: $light-primary-text,
+        A500: $light-primary-text,
+        A700: $light-primary-text,
+    )
+);
+
+$reddd-palette: (
+  50: #ffebee,
+  100: #ffcdd2,
+  200: #ef9a9a,
+  300: #e57373,
+  400: #ef5350,
+  500: #f44336,
+  600: #e53935,
+  700: #d32f2f,
+  800: #c62828,
+  900: #b71c1c,
+  A100: #ff8a80,
+  A200: #ff5252,
+  A400: #ff1744,
+  A700: #d50000,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+$my-custom-primary: mat-palette($primary);
+$my-custom-secondary: mat-palette($secondary, 100, 500, A100);
+$my-custom-warn: mat-palette($mat-lime);
+//$my-custom-theme: mat-light-theme($my-custom-primary, $my-custom-secondary, $my-custom-warn);
+// Convert => mat-light-theme()
+$my-custom-theme: mat-light-theme($my-custom-primary, $my-custom-secondary, $my-custom-warn);
+// Convert to this => mat-dark-theme()
+$my-custom-theme: mat-dark-theme($my-custom-primary, $my-custom-secondary, $my-custom-warn);
+
+@include angular-material-theme($my-custom-theme);
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Poppins, "Helvetica Neue", sans-serif;
+}

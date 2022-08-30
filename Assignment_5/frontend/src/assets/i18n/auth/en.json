@@ -1,0 +1,28 @@
+{
+	"login": {
+		"title": "Price Tool",
+        "subtitle": "Create and compare scenarios to get things done",
+		"emailAdress.label": "Email Address",
+		"emailAdress.error": "Email address is required",
+		"emailAdress.validationError": "Please enter a valid email address",
+		"password.label": "Password",
+		"password.error": "Password is required",
+		"rememberme.label": "Remember me",
+		"signinbutton.label": "Sign In",
+		"signupbutton.label": "Sign Up",
+        "orword.label": "Or continue with",
+		"noaccount.label": "Don't have an account?",
+        "ssobutton.label": "Sign In with SSO",
+        "right.title": "Simulator",
+		"forgotpassword.label": "Forgot Password ?"
+	},
+	"forgotPassword":{
+        "title": "Forgot password?",
+        "subtitle": "Fill the form to reset your password",
+		"emailAdress.label": "Email Address",
+		"emailAdress.error": "Email address is required",
+		"emailAdress.validationError": "Please enter a valid email address",
+		"resendlink.label":"Resend Link",
+        "signinbutton.label": "Sign In"
+	}
+}

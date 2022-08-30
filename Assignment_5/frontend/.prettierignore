@@ -1,0 +1,11 @@
+build
+coverage
+e2e
+node_modules
+**/.git
+**/.svn
+**/.hg
+**/node_modules
+.angular/cache
+.vscode/
+dist/
